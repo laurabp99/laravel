@@ -1,0 +1,49 @@
+
+.filter-bar {
+    background-color: white;
+    padding:  0% 10%;
+    overflow: hidden;
+    min-height: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-menu{
+    max-height: 0;
+    transition: max-height 0.9s;
+    display: flex;
+    justify-content: space-around;
+    margin: none;
+}
+
+.filter-menu.active {
+    max-height: 15rem;
+
+}
+
+.filter-button {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.filter-button svg {
+    width: 2rem;  
+    cursor: pointer;
+}
+
+.filter-button svg path{
+    fill: $secondary-color;
+}
+
+.filters-svg.active{
+    fill:$green-color;
+    z-index: 1300;
+}
+
+.filter-form{
+    display: flex;
+    margin: none;
+    padding: 1rem;
+}

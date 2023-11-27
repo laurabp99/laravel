@@ -1,0 +1,38 @@
+.registers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: $primary-color;
+    justify-content: space-between;
+    width: 35%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.registers svg{
+    fill:white
+}
+
+.register{
+    gap: 3rem;
+}
+
+.modify-register{
+    display: flex;
+    background-color: $tertiary-color;
+    justify-content: flex-end;
+}
+
+.edit{
+    width: 30px;
+}
+
+.delete{
+    width: 30px;
+}
+
+.register-data{
+    background-color:$purple-color;
+
+}

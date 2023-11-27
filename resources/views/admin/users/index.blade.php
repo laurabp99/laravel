@@ -1,13 +1,9 @@
 @extends('admin.layout.crud')
 
-@section('filters')
-    <div class="filters">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>filter-menu</title><path
-                d="M11 11L16.76 3.62A1 1 0 0 0 16.59 2.22A1 1 0 0 0 16 2H2A1 1 0 0 0 1.38 2.22A1 1 0 0 0 1.21 3.62L7 11V16.87A1 1 0 0 0 7.29 17.7L9.29 19.7A1 1 0 0 0 10.7 19.7A1 1 0 0 0 11 18.87V11M13 16L18 21L23 16Z" /></svg>
-    </div>
-@endsection
-
 @section('registers')
+@component('admin.components.table-filter')
+    
+@endcomponent
     <div class="register">
         <div class="modify-register">
             <div class="edit">
@@ -97,11 +93,11 @@
 
 @section('form')
     <div class="form-top">
-        <div class="pestanas">
-            <div class="pestana principal">
+        <div class="tabs">
+            <div class="tab principal">
                 <h2>Principal</h2>
             </div>
-            <div class="pestana imagenes">
+            <div class="tab images">
                 <h2>Imágenes</h2>
             </div>
         </div>
@@ -118,38 +114,42 @@
             </div>
         </div>
     </div>
-    <div class="form-inputs">
-        <div class="form-element">
-            <div class="form-label">
-                <label>Nombre</label>
+    <form action="">
+        <div class="form-row">
+            <div class="form-element">
+                <div class="form-label">
+                    <label>Nombre</label>
+                </div>
+                <div class="form-input">
+                    <input type="text">
+                </div>
             </div>
-            <form class="form-input">
-                <input type="text">
-            </form>
-        </div>
-        <div class="form-element">
-            <div class="form-label">
-                <label>Email</label>
-            </div>
-            <form class="form-input">
-                <input type="email">
-            </form>
-        </div>
-        <div class="form-element">
-            <div class="form-label">
-                <label>Password</label>
-            </div>
-            <form class="form-input">
-                <input type="password">
-            </form>
-        </div>
-        <div class="form-element">
-            <div class="form-label">
-                <label>Repetir password</label>
-            </div>
-            <div class="form-input">
-                <input type="password">
+            <div class="form-element">
+                <div class="form-label">
+                    <label>Email</label>
+                </div>
+                <div class="form-input">
+                    <input type="email">
+                </div>
             </div>
         </div>
-    </div>
+        <div class="form-row">
+            <div class="form-element">
+                <div class="form-label">
+                    <label>Password</label>
+                </div>
+                <div class="form-input">
+                    <input type="password">
+                </div>
+            </div>
+            <div class="form-element">
+                <div class="form-label">
+                    <label>Repetir password</label>
+                </div>
+                <div class="form-input">
+                    <input type="password">
+                </div>
+            </div>
+        </div>
+    </form>
 @endsection

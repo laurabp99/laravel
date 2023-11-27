@@ -2,9 +2,6 @@
 
 @section('content')
     
-    <div class="filter-bar">
-        @yield('filters')
-    </div>
     <div class="interface">
         <div class="registers">
             @yield('registers')
