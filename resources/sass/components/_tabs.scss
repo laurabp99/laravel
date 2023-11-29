@@ -1,0 +1,18 @@
+.tabs{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 90%;
+    display: flex;
+}
+
+.tab{
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:5%;
+}
+
+.principal{
+    background-color: rgb(13, 190, 202);
+    color:white;
+}

@@ -5,23 +5,6 @@
         </svg>
     </div>
     <div class="filter-menu">
-        <form class="filter-form">
-            <div class="form-element">
-                <div class="form-label">
-                    <label>Nombre</label>
-                </div>
-                <div class="form-input">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="form-element">
-                <div class="form-label">
-                    <label>Email</label>
-                </div>
-                <div class="form-input">
-                    <input type="email">
-                </div>
-            </div>
-        </form>
+        {{$slot}}
     </div>
 </div>

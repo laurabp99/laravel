@@ -1,4 +1,4 @@
-<html>
+<html lang="{{ app()->getLocale() }}">
     <head>
         <title>Panel de administracion</title>
         <meta name="description"
