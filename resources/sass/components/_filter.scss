@@ -1,12 +1,9 @@
 
 .filter-bar {
     background-color: white;
-    padding:  0% 10%;
-    overflow: hidden;
-    min-height: 1rem;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
+    max-height: 3rem;
+    border: 0.2rem solid hsl(214, 86%, 73%);
+    box-shadow: 7px 8px 5px black;
 }
 
 .filter-menu{
@@ -30,6 +27,7 @@
 
 .filter-button svg {
     width: 2rem;  
+    fill: hsl(214, 86%, 73%);
     cursor: pointer;
 }
 
@@ -42,8 +40,25 @@
     z-index: 1300;
 }
 
-.filter-form{
+.filter-table{
     display: flex;
-    margin: none;
-    padding: 1rem;
+    gap: 3rem;
+    flex-direction: column;
+}
+
+.filter-table p{
+    color: #fff;
+}
+
+.filter-form{
+    display: block;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.filter-form-row{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

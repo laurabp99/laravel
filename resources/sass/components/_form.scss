@@ -1,37 +1,20 @@
 
 form{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    flex: 1;
     gap: 2rem;
+}
+
+.form{
+    width: 70%;
 }
 
 .form-top{
     display: flex;
     background-color: white;
     margin-bottom: 2rem;
+    border: 0.2rem solid hsl(214, 86%, 73%);
+    box-shadow: 7px 8px 5px black;
 }
-
-.tabs{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 90%;
-    display: flex;
-}
-
-.tab{
-    width:50%;
-    background-color: $grey-color;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding:5%;
-}
-
-.principal{
-    background-color: $tertiary-color;
-    color:white;
-}
-
 
 .form-buttons{
     display: flex;
@@ -40,35 +23,54 @@ form{
 }
 
 .form-buttons svg {
-    fill: $purple-color;
+    fill: hsl(214, 86%, 73%);
 }
 
 .form-clear {
     width: 40px;
+    cursor: pointer;
 }
 
 .form-save {
     width: 40px;
+    cursor: pointer;
 }
 
 .form-row{
     display: flex;
     gap: 1rem;
-    width: 100%;
+    padding: 1rem;
 }
 
 .form-element{
     color: white;
+    font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: $primary-color;
+    background-color: hsl(240, 74%, 56%);
     flex: 1;
-    flex-direction: column;
-    display: flex;
-    gap: 0.5rem;
 }
 
 .form-input input{
     width: 100%;
-    background-color: $purple-color;
-    padding: 0.2rem;
+    background-color: hsl(240, 79%, 68%);
+    padding: 1rem;
+    border: 0.2rem solid hsl(214, 86%, 73%);
+    box-shadow: 7px 8px 5px black;
+}
+
+.form-input input{
+    width: 100%;
+    background-color: hsl(240, 79%, 68%);
+    padding: 1rem;
+    border: 0.2rem solid hsl(214, 86%, 73%);
+    box-shadow: 7px 8px 5px black;
+    outline: none;
+}
+
+.validate.error{
+    border: 2px solid red;
+}
+
+.name-validation.error{
+    border: 2px solid red;
 }

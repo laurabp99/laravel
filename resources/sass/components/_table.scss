@@ -2,9 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: $primary-color;
+    background-color: hsl(240, 74%, 56%);
     justify-content: space-between;
-    width: 35%;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -16,6 +15,8 @@
 
 .register{
     gap: 3rem;
+    border: 0.2rem solid hsl(214, 86%, 73%);
+    box-shadow: 7px 8px 5px black;
 }
 
 .modify-register{
@@ -24,8 +25,9 @@
     justify-content: flex-end;
 }
 
-.edit{
+.edit-button{
     width: 30px;
+    cursor: pointer;
 }
 
 .delete{
@@ -33,6 +35,7 @@
 }
 
 .register-data{
-    background-color:$purple-color;
+    background-color:hsl(240, 79%, 68%);
+    padding: 0.5rem
 
 }

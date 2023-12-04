@@ -5,14 +5,23 @@
 }
 
 .tab{
-    background-color: grey;
+    background-color: hsl(240, 79%, 68%);
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding:5%;
+    cursor: pointer;
 }
 
-.principal{
-    background-color: rgb(13, 190, 202);
+.tab-content{
+    display: none;
+}
+
+.tab-content.active{
+    display: block;
+}
+
+.tab.active{
+    background-color: hsl(184, 88%, 42%);
     color:white;
 }
