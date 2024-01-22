@@ -1,32 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome', ['name' => 'Laura']);
-});
-
-Route::get('/admin/usuarios', function () {
-    return view('admin.users.index');
-});
-
-Route::get('/admin/eventos', function () {
-    return view('admin.events.index');
-});
-
-<?php
-
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'admin', => 'auth'], function () {
+Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('idiomas', 'App\Http\Controllers\Admin\LanguageController', [
     'parameters' => [
@@ -87,4 +60,4 @@ Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.up
 Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

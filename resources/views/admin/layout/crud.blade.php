@@ -3,8 +3,8 @@
 @section('content')
     
     <div class="interface">
-        <div class="registers">
-            @yield('registers')
+        <div class="table">
+            @yield('table')
         </div>
         <div class="form">
             @yield('form')

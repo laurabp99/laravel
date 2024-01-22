@@ -4,4 +4,5 @@ import './tabs.js';
 import './filter-modal.js';
 import './delete-modal.js';
 import './table.js'
-import './form-validation.js';
+// import './form-validation.js';
+import './form.js';

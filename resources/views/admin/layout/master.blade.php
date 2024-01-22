@@ -4,6 +4,7 @@
         <meta name="description"
             content="descripción de la web, se recomienda 90 caracteres">
         <meta name="keywords" content="palabras clave, separadas, por comas">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Panel de administracion" />
         <meta property="og:description"
@@ -22,6 +23,8 @@
         @include('admin.layout.partials.header')
         
         <main>
+            @component('admin.components.delete-modal')@endcomponent
+
             @yield('content')
         </main>
     </body>
