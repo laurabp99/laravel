@@ -14,50 +14,50 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
-    Route::resource('idiomas', 'App\Http\Controllers\Admin\LanguageController', [
+  Route::resource('idiomas', 'App\Http\Controllers\Admin\LanguageController', [
     'parameters' => [
-    'idiomas' => 'language', 
+      'idiomas' => 'language', 
     ],
     'names' => [
-    'index' => 'languages',
-    'create' => 'languages_create',
-    'edit' => 'languages_edit',
-    'store' => 'languages_store',
-    'destroy' => 'languages_destroy',
+      'index' => 'languages',
+      'create' => 'languages_create',
+      'edit' => 'languages_edit',
+      'store' => 'languages_store',
+      'destroy' => 'languages_destroy',
     ]
-]);
+  ]);
 
-Route::resource('usuarios', 'App\Http\Controllers\Admin\UserController', [
+  Route::resource('usuarios', 'App\Http\Controllers\Admin\UserController', [
     'parameters' => [
-    'usuarios' => 'user', 
+      'usuarios' => 'user', 
     ],
     'names' => [
-    'index' => 'users',
-    'create' => 'users_create',
-    'edit' => 'users_edit',
-    'store' => 'users_store',
-    'destroy' => 'users_destroy',
+      'index' => 'users',
+      'create' => 'users_create',
+      'edit' => 'users_edit',
+      'store' => 'users_store',
+      'destroy' => 'users_destroy',
     ]
-]);
+  ]);
 
-Route::resource('eventos', 'App\Http\Controllers\Admin\EventController', [
+  Route::resource('eventos', 'App\Http\Controllers\Admin\EventController', [
     'parameters' => [
-    'eventos' => 'event', 
+      'eventos' => 'event', 
     ],
     'names' => [
-    'index' => 'events',
-    'create' => 'events_create',
-    'edit' => 'events_edit',
-    'store' => 'events_store',
-    'destroy' => 'events_destroy',
+      'index' => 'events',
+      'create' => 'events_create',
+      'edit' => 'events_edit',
+      'store' => 'events_store',
+      'destroy' => 'events_destroy',
     ]
-]);
+  ]);
 
-Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+  Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+  Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

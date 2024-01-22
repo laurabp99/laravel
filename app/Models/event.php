@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class event extends Model
+class Event extends Model
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
     use SoftDeletes;
 
     protected $guarded = [];

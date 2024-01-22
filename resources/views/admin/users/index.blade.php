@@ -75,7 +75,7 @@
         </div>
     </div>
     <form class="admin-form">
-        <input type="hidden" name="id" value="{{$user->id}}">
+        <input type="hidden" name="id" value="{{$user->id ?? ''}}">
         <div class="tab-content active" data-tab="general">
             <div class="form-row">
                 <div class="form-element">

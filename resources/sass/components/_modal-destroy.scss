@@ -1,22 +1,10 @@
-.delete{
-    width: 30px;
-    cursor: pointer;
-}
-
-.delete-button {
-    display: flex;
-    justify-content: center;
-    width: 30px;
-    cursor: pointer;
-}
-
-.delete-confirm{
+.modal-destroy-buttons{
     display: flex;
     gap: 4rem;
     justify-content: center;
 }
 
-.delete-yes{
+.confirmation-button{
     background-color: green;
     width: 7rem;
     cursor: pointer;
@@ -24,7 +12,7 @@
     padding: 0.5rem;
 }
 
-.delete-no{
+.cancel-button{
     background-color: red;
     width: 7rem;
     cursor: pointer;
@@ -32,7 +20,7 @@
     padding: 0.5rem;
 }
 
-.delete-modal{
+.modal-destroy{
     display: none;
     position: fixed;
     top: 0;
@@ -45,7 +33,7 @@
     align-items: center;
 }
 
-.delete-modal.active{
+.modal-destroy.active{
     display: flex;
     font-size: 20px;
     font-weight:600;
@@ -54,7 +42,7 @@
     right: 15px;
 }
 
-.delete-modal-content{
+.modal-destroy-content{
     background-color: hsl(240, 74%, 56%);
     padding: 20px;
     border: 0.2rem solid white;
@@ -71,6 +59,6 @@
     gap: 4rem;
 }
 
-.delete-modal-content p{
+.modal-destroy-content p{
     color: white;
 }

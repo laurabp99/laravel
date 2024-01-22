@@ -1,0 +1,21 @@
+body{
+  background-color: rgb(42,76,187);
+}
+
+main{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-elements{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

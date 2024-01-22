@@ -50,21 +50,15 @@ form{
     flex: 1;
 }
 
-.form-input input{
-    width: 100%;
-    background-color: hsl(240, 79%, 68%);
-    padding: 1rem;
-    border: 0.2rem solid hsl(214, 86%, 73%);
-    box-shadow: 7px 8px 5px black;
-}
-
-.form-input input{
-    width: 100%;
-    background-color: hsl(240, 79%, 68%);
-    padding: 1rem;
-    border: 0.2rem solid hsl(214, 86%, 73%);
-    box-shadow: 7px 8px 5px black;
-    outline: none;
+.form-input{ 
+    input, select{
+        width: 100%;
+        background-color: hsl(240, 79%, 68%);
+        padding: 1rem;
+        border: 0.2rem solid hsl(214, 86%, 73%);
+        box-shadow: 7px 8px 5px black;
+        outline: none;
+    }
 }
 
 .validate.error{

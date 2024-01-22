@@ -31,12 +31,20 @@
     cursor: pointer;
 }
 
-.delete{
-    width: 30px;
-}
-
 .register-data{
     background-color:hsl(240, 79%, 68%);
     padding: 0.5rem
 
+}
+
+.delete{
+    width: 30px;
+    cursor: pointer;
+}
+
+.delete-button {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    cursor: pointer;
 }

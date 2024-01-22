@@ -16,14 +16,14 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
             rel="stylesheet">
-            @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+            @vite(['resources/sass/admin-app.scss', 'resources/js/admin-app.js'])
     </head>
 
     <body>
         @include('admin.layout.partials.header')
         
         <main>
-            @component('admin.components.delete-modal')@endcomponent
+            @component('admin.components.modal-destroy')@endcomponent
 
             @yield('content')
         </main>
