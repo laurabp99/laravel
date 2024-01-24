@@ -50,126 +50,159 @@
 
 
 @section('form')
-    <div class="form-top">
+  <div class="form-top">
+      <div class="tabs">
+          <div class="tab active" data-tab="general">
+              <h2>Principal</h2>
+          </div>
+          <div class="tab" data-tab="images">
+              <h2>Imágenes</h2>
+          </div>
+      </div>
+      <div class="form-buttons">
+          <div class="form-clear create-button" data-endpoint="{{route('events_create')}}">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <title>broom</title>
+                  <path
+                      d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
+              </svg>
+          </div>
+          <div class="store-button" data-endpoint="{{route('events_store')}}">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <title>content-save</title>
+                  <path
+                      d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
+              </svg>
+          </div>
+      </div>
+  </div>
+  <form class="admin-form">
+    <input type="hidden" name="id" value="{{$event->id ?? ''}}">
+    <div class="tab-content active" data-tab="general">
+      <div class="form-row">
+        <div class="form-element">
+          <div class="form-label">
+            <label>Nombre</label>
+          </div>
+          <div class="form-input">
+            <input name="name" type="text" class="event-name" data-onlyletters="true" value="{{$event->name ?? ''}}">
+          </div>
+        </div>
+        <div class="form-element">
+          <div class="form-label">
+            <label>Población</label>
+          </div>
+          <div class="form-input">
+            <select id="town_id" name="town_id">
+              <option value ="" disabled selected></option>
+              @foreach($towns as $town)
+                <option value="{{$town->id}}" {{$town->id == $event->town_id ? 'selected' : ''}}>{{$town->name}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-element">
+          <div class="form-label">
+            <label>Fecha de inicio</label>
+          </div>
+          <div class="form-input">
+            <input name="start_date" type="date" class="start-date" value="{{$event->start_date ?? ''}}">
+          </div>
+        </div>
+        <div class="form-element">
+          <div class="form-label">
+            <label>Fecha de fin</label>
+          </div>
+          <div class="form-input">
+            <input name="end_date" type="date" class="end-date" value="{{$event->end_date ?? ''}}">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-element">
+          <div class="form-label">
+            <label>Hora de inicio</label>
+          </div>
+          <div class="form-input">
+            <input name="start_time" type="time" class="start-time" value="{{$event->start_time ?? ''}}">
+          </div>
+        </div>
+        <div class="form-element">
+          <div class="form-label">
+            <label>Hora de fin</label>
+          </div>
+          <div class="form-input">
+            <input name="end_time" type="time" class="end-time" value="{{$event->end_time ?? ''}}">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">    
+        <div class="form-element">
+          <div class="form-label">
+            <label>Dirección</label>
+          </div>
+          <div class="form-input">
+            <input name="address" type="string" class="address" value="{{$event->address ?? ''}}">
+          </div>
+        </div>
+        <div class="form-element">
+          <div class="form-label">
+            <label>Precio</label>
+          </div>
+          <div class="form-input">
+            <input name="price" type="decimal" class="price" value="{{$event->price ?? ''}}">
+          </div>
+        </div>
+      </div> 
+      <div class="languages-tabs">
         <div class="tabs">
-            <div class="tab active" data-tab="general">
-                <h2>Principal</h2>
+          @foreach($languages as $language)
+            <div class="tab {{ $loop->first ? 'active' : '' }}" data-tab="{{$language->label}}">
+              <h2>{{$language->label}}</h2>
             </div>
-            <div class="tab" data-tab="images">
-                <h2>Imágenes</h2>
-            </div>
+          @endforeach
         </div>
-        <div class="form-buttons">
-            <div class="form-clear create-button" data-endpoint="{{route('events_create')}}">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
-                    <title>broom</title>
-                    <path
-                        d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
-                </svg>
+      </div>
+      @foreach($languages as $language)
+        <div class="tab-content {{ $loop->first ? 'active' : '' }}" data-tab="{{$language->label}}">
+          <div class="form-row"> 
+            <div class="form-element">
+              <div class="form-label">
+                <label>Título</label>
+              </div>
+              <div class="form-input">
+                <input name="title" type="text" class="event-title" data-onlyletters="true" value="{{$event->title ?? ''}}">
+              </div>
             </div>
-            <div class="store-button" data-endpoint="{{route('events_store')}}">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
-                    <title>content-save</title>
-                    <path
-                        d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" />
-                </svg>
-            </div>
-        </div>
+          </div>
+          <div class="form-row"> 
+            <div class="form-element">
+              <div class="form-label">
+                <label>Descripción</label>
+              </div>
+              <div class="form-input">
+                <input name="description" type="textarea" class="event-description" data-onlyletters="true" value="{{$event->description ?? ''}}">
+              </div>
+            </div> 
+          </div>
+        </div> 
+      @endforeach
     </div>
-    <form class="admin-form">
-        <input type="hidden" name="id" value="{{$event->id ?? ''}}">
-        <div class="tab-content active" data-tab="general">
-            <div class="form-row">
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Nombre</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="name" type="text" class="event-name" data-onlyletters="true" value="{{$event->name ?? ''}}">
-                    </div>
-                </div>
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Población</label>
-                    </div>
-                    <div class="form-input">
-                        <select id="town_id" name="town_id">
-                            <option value ="" disabled selected></option>
-                            @foreach($towns as $town)
-                                <option value="{{$town->id}}" {{$town->id == $event->town_id ? 'selected' : ''}}>{{$town->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Fecha de inicio</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="start_date" type="date" class="start-date">
-                    </div>
-                </div>
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Fecha de fin</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="end_date" type="date" class="end-date">
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Hora de inicio</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="start_time" type="time" class="start-time">
-                    </div>
-                </div>
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Hora de fin</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="end_time" type="time" class="end-time">
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">    
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Dirección</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="address" type="string" class="address">
-                    </div>
-                </div>
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Precio</label>
-                    </div>
-                    <div class="form-input">
-                        <input name="price" type="decimal" class="price">
-                    </div>
-                </div>
-            </div>    
+    <div class="tab-content" data-tab="images">
+      <div class="form-row">
+        <div class="form-element">
+          <div class="form-label">
+            <label>Avatar</label>
+          </div>
+          <div class="form-input">
+            <input type="file">
+          </div>
         </div>
-        <div class="tab-content" data-tab="images">
-            <div class="form-row">
-                <div class="form-element">
-                    <div class="form-label">
-                        <label>Avatar</label>
-                    </div>
-                    <div class="form-input">
-                        <input type="file">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
+      </div>
+    </div>
+  </form>
 @endsection

@@ -26,8 +26,11 @@
         </div>
         <div class="buttons">
           <div class="password-forget">
+            <h2>¿Olvidaste la contraseña?
+            </h2>
           </div>
           <button class="login">
+            Iniciar sesión
           </button>
         </div>
       </div>

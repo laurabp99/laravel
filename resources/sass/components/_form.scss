@@ -68,3 +68,15 @@ form{
 .name-validation.error{
     border: 2px solid red;
 }
+
+.languages-tabs{
+    display: flex;
+    background-color: white;
+    margin: 1rem;
+    border: 0.2rem solid hsl(214, 86%, 73%);
+    box-shadow: 7px 8px 5px black;
+}
+
+.languages-tabs .tab{
+  padding: 0.5rem;
+}

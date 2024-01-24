@@ -8,14 +8,38 @@ main{
   justify-content: center;
 }
 
-.form{
+form{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 23rem;
 }
 
 .form-elements{
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   justify-content: center;
+}
+
+.form-input input {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.buttons{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons .password-forget{
+  font-size: 10px;
+}
+
+.buttons .login {
+  color: white;
+  background-color: rgb(13,189,201);
+  border-radius: 10%;
+  padding: 0.5rem
 }

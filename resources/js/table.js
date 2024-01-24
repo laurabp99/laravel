@@ -30,9 +30,9 @@ export default (() => {
             const json = await response.json();
 
             document.dispatchEvent(new CustomEvent('refreshForm', {
-            detail: {
-                form: json.form,
-            }
+              detail: {
+                  form: json.form,
+              }
             }));
         }
         }catch(error){
