@@ -6,10 +6,13 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Http\Requests\Admin\EventRequest;
+use App\Services\LocaleService\LocaleService;
 
 class EventController extends Controller
 {
-  public function __construct(private Event $event){}
+  public function __construct(private Event $event, private LocaleService $localeService){
+    $this->localeService->setEntity('events');
+  }
   
   public function index()
   {
@@ -73,6 +76,14 @@ class EventController extends Controller
     try{
 
       $data = $request->validated();
+
+      $event = $this->event->updateOrCreate([
+        'id' => $request->input('id')
+      ], $data);
+
+      if(request('locale')){
+        $locale = $this->localeService->store(request('locale'), $event->id);
+      }
 
       unset($data['password_confirmation']);
       
