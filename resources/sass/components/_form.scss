@@ -61,7 +61,16 @@ form{
     }
 }
 
+textarea{
+  background-color: hsl(240, 79%, 68%);
+  border: 0.2rem solid hsl(214, 86%, 73%);
+  box-shadow: 7px 8px 5px black;
+  height: 10rem;
+  width: 100%;
+}
+
 .validate.error{
+  
     border: 2px solid red;
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\LocaleService;
+namespace App\Services\LocaleServices;
 
 use App\Models\Locale;
 
@@ -45,6 +45,17 @@ class LocaleService
 
     return $locale;
   }
+
+  public function parseLocales($entity)
+  {
+    $locales = $entity->locales()->pluck('value', 'name')->all();
+
+    foreach ($locales as $name => $value) {
+      $entity->$name = $value;
+    }
+
+    return $entity;
+  }  
 
   public function show($entity_id)
   {

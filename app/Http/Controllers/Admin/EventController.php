@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Http\Requests\Admin\EventRequest;
-use App\Services\LocaleService\LocaleService;
+use App\Services\LocaleServices\LocaleService;
+use Debugbar;
 
 class EventController extends Controller
 {
@@ -18,7 +19,7 @@ class EventController extends Controller
   {
     try{
 
-      $events = $this->event
+      $events = $this->event->with('town')
         ->orderBy('created_at', 'desc')
         ->paginate(10);
 
@@ -85,16 +86,6 @@ class EventController extends Controller
         $locale = $this->localeService->store(request('locale'), $event->id);
       }
 
-      unset($data['password_confirmation']);
-      
-      if (!$request->filled('password') && $request->filled('id')){
-        unset($data['password']);
-      }
-  
-      $this->event->updateOrCreate([
-        'id' => $request->input('id')
-      ], $data);
-
       $events = $this->event
       ->orderBy('created_at', 'desc')
       ->paginate(10);
@@ -125,6 +116,8 @@ class EventController extends Controller
   public function edit(Event $event)
   {
     try{
+
+      $event = $this->localeService->parseLocales($event);
 
       $events = $this->event
       ->orderBy('created_at', 'desc')

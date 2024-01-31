@@ -31,8 +31,7 @@
             <div class="register-data">
                 <ul>
                     <li>Nombre: {{ $event_element->name }}</li>
-                    <li>Población: {{ $event_element->town_id }}</li>
-                    <li>Dirección: {{ $event_element->address }}</li>
+                    <li>Población: {{ $event_element->town->name }}</li>
                     <li>Inicio: {{ $event_element->start_time }}</li>
                     <li>Fin: {{ $event_element->end_time }}</li>
                     <li>Precio: {{ $event_element->price }}</li>
@@ -175,7 +174,7 @@
                 <label>Título</label>
               </div>
               <div class="form-input">
-                <input name="title" type="text" class="event-title" data-onlyletters="true" value="{{$event->title ?? ''}}">
+                <input name="locale[title.{{$language->label}}]" type="text" class="event-title" data-onlyletters="true" value="{{$event['title.'.$language->label] ?? ''}}">
               </div>
             </div>
           </div>
@@ -185,7 +184,7 @@
                 <label>Descripción</label>
               </div>
               <div class="form-input">
-                <input name="description" type="textarea" class="event-description" data-onlyletters="true" value="{{$event->description ?? ''}}">
+                <textarea name="locale[description.{{$language->label}}]" type="textarea" class="event-description" data-onlyletters="true">{{$event['description.'.$language->label] ?? ''}}</textarea>
               </div>
             </div> 
           </div>

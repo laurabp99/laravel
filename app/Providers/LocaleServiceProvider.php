@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\LocaleServices\LocaleService;
+use App\Models\Locale;
 
 class LocaleServiceProvider extends ServiceProvider
 {
